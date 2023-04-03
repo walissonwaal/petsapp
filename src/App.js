@@ -1,6 +1,7 @@
 import { SafeAreaView, StatusBar, View } from 'react-native'
 import { TextBold, ToggleTheme } from './components'
 import * as Font from 'expo-font'
+import SignIn from './pages/SignIn'
 
 export default function App () {
   async function loadFonts () {
@@ -11,11 +12,10 @@ export default function App () {
   loadFonts()
   if (!loadFonts) return null
   return (
-    <SafeAreaView>
+    <SafeAreaView className='m-0'>
       <StatusBar />
-      <View className='flex h-full items-center justify-center dark:bg-body light:bg-white'>
-        <ToggleTheme />
-        <TextBold className='text-2xl dark:text-white light:text-black'>Pets App</TextBold>
+      <View className='h-full flex items-center py-12 dark:bg-body'>
+      <SignIn />
       </View>
     </SafeAreaView>
   )
